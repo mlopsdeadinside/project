@@ -35,7 +35,7 @@ def predict():
         'Sensor_ID_Sensor_2': [1 if sensor_id == 'Sensor_2' else 0],
         'Sensor_ID_Sensor_3': [1 if sensor_id == 'Sensor_3' else 0],
         'Hour': [hour],
-        'DayOfWeek': [day_in_week],
+        'DayInWeek': [day_in_week],
         'Month': [month]
     })
     
@@ -46,4 +46,4 @@ def predict():
     return render_template('app/predict.html', prediction=prediction)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=8080)
