@@ -24,7 +24,7 @@ jobs:
     - name: Setup DVC
       uses: iterative/setup-dvc@v1
     
-    - name: Setup Google Drive credentials
+    - name: GDrive Credentials 
       env:
         GDRIVE_CLIENT_ID: ${{ secrets.GDRIVE_CLIENT_ID }}
         GDRIVE_CLIENT_SECRET: ${{ secrets.GDRIVE_LINK}}
@@ -35,10 +35,10 @@ jobs:
         dvc remote modify storage gdrive_client_secret $GDRIVE_CLIENT_SECRET
         dvc remote modify storage gdrive_service_account_json_file_path dvc-remote-connections.json
 
-    - name: Pull Data from DVC
+    - name: DVC Data Pull
       run: |
         dvc pull
-    - name: Add More Data to DVC    
+    - name: DVC Data Generation   
       run: |
         python random_data.py
         dvc add dummy_sensor_data.csv
