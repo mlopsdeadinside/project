@@ -1,0 +1,18 @@
+#Incase of any changes in the data it pulls the data from the remote storage and then generates the data and then pushes the data to the remote storage
+stages:
+  fetch_file:
+    cmd: dvc pull -r storage
+    deps: []
+    outs: []
+
+  generate_data:
+    cmd: python random_data.py
+    deps:
+      - random_data.py
+    outs: []
+
+  upload_file:
+    cmd: dvc push -r storage
+    deps:
+      - dummy_sensor_data.csv
+    outs: []
