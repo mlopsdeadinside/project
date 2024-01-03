@@ -16,7 +16,8 @@ def load_data():
     return data
 
 def start():
-    user_input = input("Would you like to perform Data Generation? (y/n): ").lower()
+    print("Would you like to perform Data Generation? (y/n): ")
+    user_input = y
     if user_input == 'y' :
         subprocess.call(['python', 'generate_data.py'])
     elif user_input == 'n':
@@ -90,7 +91,8 @@ def start():
         mlflow.sklearn.log_model(sk_model=rf, input_example=X_test, artifact_path=artifact_path)
     
     print("Best Model Deployment:")
-    user_input2 = input("Would you like to deploy the model? (y/n)").lower()
+    print("Would you like to deploy the model? (y/n)")
+    user_input2 = 'y'
     if user_input2 == 'y' :
         print("Model Deploying")
         best_model = rf.best_estimator_
