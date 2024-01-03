@@ -105,7 +105,7 @@ def start():
         )[0]
         print("Best Run:", best_run.info.run_id)
         # Clear app/best_model folder if it exists
-        #subprocess.call(['rm', '-rf', 'app/best_model'])  # Saving the best model,Replacing the existing best
+        subprocess.call(['rm', '-rf', 'app/best_model'])  # Saving the best model,Replacing the existing best
         mlflow.sklearn.save_model(best_model, "app/best_model")  # saving best_run as a pickle file
         mlflow.sklearn.log_model( 
             sk_model=best_model,
