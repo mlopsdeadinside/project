@@ -2,7 +2,7 @@ import mlflow
 from mlflow import MlflowClient, pyfunc
 import subprocess
 import pandas as pd
-from preprocess import preprocess_data
+from preprocess_data import proc_data
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score 
 
 def fetch_model():
@@ -18,7 +18,7 @@ def fetch_model():
 
 def fetch_data(data_file_path = 'dummy_sensor_data.csv'): 
     data = pd.read_csv(data_file_path)
-    data = preprocess_data(data)
+    data = proc_data(data)
     return data
 
 def save_metrics(mae, r2, mse):
