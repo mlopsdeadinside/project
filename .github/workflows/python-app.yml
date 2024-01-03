@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python 3.12
+    - name: Set up Python 3.9
       uses: actions/setup-python@v3
       with:
-        python-version: "3.12"
+        python-version: "3.9"
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
@@ -41,7 +41,7 @@ jobs:
     - name: DVC Data Generation   
       run: |
         python random_data.py
-        dvc add dummy_sensor_data.csv
+        dvc add dummy_sensor_data.csv 
     - name: Push data back to gdrive
       run: 'dvc push -r storage'
 
