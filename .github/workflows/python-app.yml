@@ -67,10 +67,8 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Conditionally Run - Build Docker Image
-      if: ${{ env.condition_result == 'true' }}
       run: docker build . --file Dockerfile --tag mlopsdeadinside/project:latest
     - name: Conditionally Run - Push Docker Image
-      if: ${{ env.condition_result == 'true' }}
       run: |
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
         docker push mlopsdeadinside/project:latest
