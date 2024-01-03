@@ -17,7 +17,7 @@ def load_data():
 
 def start():
     print("Would you like to perform Data Generation? (y/n): ")
-    user_input = y
+    user_input = 'y'
     if user_input == 'y' :
         subprocess.call(['python', 'generate_data.py'])
     elif user_input == 'n':
