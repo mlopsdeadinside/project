@@ -1,0 +1,4 @@
+Tasks:
+Raheimeen Sherafgan i200427: DVC Set up + Initial Workflow and project setup
+Tehreem Arbab i202481: Mlflow + Concept Drift
+Aashan Javed i200491: Docker setup + Flask 
