@@ -1,6 +1,6 @@
 The steps followed in order are available here 
 # Project README
-![Model Status]()
+![Model Status](https://github.com/mlopsdeadinside/project/actions/workflows/python-app.yml/badge.svg)
 ## DVC Setup
 - Install the DVC Windows bit version from the dvc website. 
 - Run the setup and give it all necessary permissions.
